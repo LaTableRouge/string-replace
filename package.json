@@ -1,0 +1,27 @@
+{
+  "name": "@mlnop/string-replace",
+  "version": "1.0.0",
+  "description": "replace string by another",
+  "main": "string-replace.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "fsevents": "~2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MLNOP/string-replace.git"
+  },
+  "keywords": [
+    "replace",
+    "string",
+    "viteJS"
+  ],
+  "author": "MLNOP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MLNOP/string-replace/issues"
+  },
+  "homepage": "https://github.com/MLNOP/string-replace#readme"
+}
