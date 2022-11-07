@@ -19,14 +19,14 @@ const stringReplaceOpenAndWrite = async (filePath, replaceArray, index = 0) => {
 }
 
 const stringReplaceIsFileOrFolder = async (elementPath, replace) => {
-  const stat = await fs.lstat(resolve(__dirname, elementPath))
+  const stat = await fs.lstat(elementPath)
   const isFile = stat.isFile()
 
   if (isFile) {
     stringReplaceOpenAndWrite(elementPath, replace)
   } else {
     // récupère les fichiers du path
-    const files = await fs.readdir(resolve(__dirname, elementPath))
+    const files = await fs.readdir(elementPath)
 
     // Créé un array avec la lsite des path des fichiers
     const getData = files.flatMap(async (file) => {

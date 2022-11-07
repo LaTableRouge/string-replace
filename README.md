@@ -12,9 +12,10 @@ npm i @mlnop/string-replace --save-dev
 
 ```js
 const {stringReplaceOpenAndWrite, stringReplace} = require("@mlnop/string-replace");
+const {resolve} = require("path");
 
 // single file usage
-stringReplaceOpenAndWrite("README.md", [
+stringReplaceOpenAndWrite(resolve(__dirname, "README.md"), [
   {
     from: /\bstring-replace/g,
     to: "ayaya",
@@ -24,7 +25,7 @@ stringReplaceOpenAndWrite("README.md", [
 // single or multiple file usage
 stringReplace([
   {
-    filePath: ["README.md"],
+    filePath: [resolve(__dirname, "README.md")],
     replace: [
       {
         from: /\bstring-replace/g,
@@ -37,7 +38,7 @@ stringReplace([
     ],
   },
   {
-    filePath: "README.md",
+    filePath: resolve(__dirname, "README.md"),
     replace: [
       {
         from: /\bstring-replace/g,
