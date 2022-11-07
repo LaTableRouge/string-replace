@@ -1,4 +1,6 @@
 const fs = require('fs').promises
+const path = require('path')
+const { resolve } = require('path')
 
 const stringReplaceOpenAndWrite = async (filePath, replaceArray, index = 0) => {
   if (replaceArray[index]) {
