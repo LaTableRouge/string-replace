@@ -9,7 +9,7 @@ const stringReplaceOpenAndWrite = async (filePath, replaceArray, index = 0) => {
       await fs.writeFile(filePath, result, 'utf8')
       console.log(`Replaced "${from}" to "${to}" in file "${filePath}"`)
     } else {
-      // console.log(`No string found for the regex "${from}" in file "${filePath}"`)
+      console.log(`No string found for the regex "${from}" in file "${filePath}"`)
     }
 
     stringReplaceOpenAndWrite(filePath, replaceArray, index + 1)
