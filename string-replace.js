@@ -71,4 +71,14 @@ const stringReplace = (array) => {
   }
 }
 
-module.exports = { stringReplaceOpenAndWrite, stringReplace }
+const viteStringReplace = (array, hook = 'closeBundle') => {
+  return {
+    name: 'vite-plugin-string-replace',
+    apply: 'build',
+    [hook]: () => {
+      stringReplace(array)
+    }
+  }
+}
+
+module.exports = { stringReplaceOpenAndWrite, stringReplace, viteStringReplace }
