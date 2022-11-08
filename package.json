@@ -1,6 +1,6 @@
 {
   "name": "@mlnop/string-replace",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "replace string by another",
   "main": "string-replace.js",
   "scripts": {
