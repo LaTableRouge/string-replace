@@ -10,6 +10,8 @@ string-replace is available as an NPM package:
 npm i @mlnop/string-replace --save-dev
 ```
 
+### Usual
+
 ```js
 const {stringReplaceOpenAndWrite, stringReplace} = require("@mlnop/string-replace");
 const {resolve} = require("path");
@@ -53,7 +55,54 @@ stringReplace([
 ]);
 ```
 
+### Vite plugin
+
+for the vite compatibilty, you can pass a hook as second parameter in the function ("closeBundle" is the default value)
+
+```js
+const {viteStringReplace} = require("@mlnop/string-replace");
+const {resolve} = require("path");
+
+// vite plugin single or multiple file usage
+viteStringReplace(
+  [
+    {
+      filePath: [resolve(__dirname, "README.md")],
+      replace: [
+        {
+          from: /\bstring-replace/g,
+          to: "ayaya",
+        },
+        {
+          from: /\bUsage example/g,
+          to: "hello there",
+        },
+      ],
+    },
+    {
+      filePath: resolve(__dirname, "README.md"),
+      replace: [
+        {
+          from: /\bstring-replace/g,
+          to: "ayaya",
+        },
+        {
+          from: /\bUsage example/g,
+          to: "hello there",
+        },
+      ],
+    },
+  ],
+  "closeBundle"
+);
+```
+
 ## Changelog
+
+#### 1.0.5 &mdash; 07/11/2022
+
+- Added vite compatibility
+- Published to NPM.
 
 #### 1.0.0 &mdash; 07/11/2022
 
