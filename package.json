@@ -1,24 +1,39 @@
 {
   "name": "@mlnop/string-replace",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "replace string by another",
-  "main": "string-replace.js",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vitest",
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "test": "vitest run"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MLNOP/string-replace.git"
+    "url": "git+https://github.com/LaTableRouge/string-replace.git"
   },
   "keywords": [
     "replace",
     "string",
     "viteJS"
   ],
-  "author": "MLNOP",
+  "author": "LaTableRouge",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MLNOP/string-replace/issues"
+    "url": "https://github.com/LaTableRouge/string-replace/issues"
   },
-  "homepage": "https://github.com/MLNOP/string-replace#readme"
+  "homepage": "https://github.com/LaTableRouge/string-replace#readme",
+  "devDependencies": {
+    "@types/node": "^22.10.3",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
 }

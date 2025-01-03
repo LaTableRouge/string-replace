@@ -15,6 +15,9 @@ npm i @mlnop/string-replace --save-dev
 ```js
 const {stringReplaceOpenAndWrite, stringReplace} = require("@mlnop/string-replace");
 const {resolve} = require("path");
+// OR
+import { stringReplaceOpenAndWrite, stringReplace } from "@mlnop/string-replace";
+import { resolve } from "path";
 
 // single file usage
 stringReplaceOpenAndWrite(resolve(__dirname, "README.md"), [
@@ -62,6 +65,9 @@ for the vite compatibilty, you can pass a hook as second parameter in the functi
 ```js
 const {viteStringReplace} = require("@mlnop/string-replace");
 const {resolve} = require("path");
+// OR
+import { viteStringReplace } from "@mlnop/string-replace";
+import { resolve } from "path";
 
 // vite plugin single or multiple file usage
 viteStringReplace(
@@ -98,6 +104,11 @@ viteStringReplace(
 ```
 
 ## Changelog
+
+#### 2.0.0 &mdash; 03/01/2024
+
+- TypeScript support
+- Unit tests
 
 #### 1.0.5 &mdash; 07/11/2022
 
